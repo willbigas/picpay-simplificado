@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Table(name = "transactions")
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
