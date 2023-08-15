@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  picpay-service:
+    image: picpay-simplificado
+    container_name: picpay-simplificado
+    build:
+      context: .
+    ports:
+      - '8080:8080'
