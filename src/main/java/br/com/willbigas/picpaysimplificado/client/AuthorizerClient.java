@@ -24,7 +24,7 @@ public class AuthorizerClient {
 	public Boolean checkTransactionIsAuthorize(User sender , BigDecimal value) {
 		var authorizationResponse = restTemplate.getForEntity(authorizerClientURL, Map.class);
 
-		if (authorizationResponse.getStatusCode() == HttpStatus.OK && authorizationResponse.getBody().get("message") == "Autorizado") {
+		if (authorizationResponse.getStatusCode() == HttpStatus.OK && authorizationResponse.getBody().get("message").equals("Autorizado")) {
 			return Boolean.TRUE;
 		}
 		return Boolean.FALSE;

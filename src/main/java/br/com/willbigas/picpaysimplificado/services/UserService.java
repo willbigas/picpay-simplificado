@@ -2,11 +2,13 @@ package br.com.willbigas.picpaysimplificado.services;
 
 import br.com.willbigas.picpaysimplificado.domain.user.User;
 import br.com.willbigas.picpaysimplificado.domain.user.UserType;
+import br.com.willbigas.picpaysimplificado.dtos.UserDTO;
 import br.com.willbigas.picpaysimplificado.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -29,8 +31,17 @@ public class UserService {
 		return userRepository.findUserById(id).orElseThrow(() -> new Exception("Usuário não encontrado"));
 	}
 
+	public User createUser(UserDTO userDTO) {
+		User user = new User(userDTO);
+		this.saveUser(user);
+		return user;
+	}
+
 	public void saveUser(User user) {
 		this.userRepository.save(user);
 	}
 
+	public List<User> getAllUsers() {
+		return this.userRepository.findAll();
+	}
 }

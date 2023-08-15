@@ -15,6 +15,6 @@ public class NotificationService {
 
 	public void sendNotification(User user , String message) throws Exception {
 		String email = user.getEmail();
-		notificationClient.notify(email , message);
+		notificationClient.sendNotification(email , message);
 	}
 }
