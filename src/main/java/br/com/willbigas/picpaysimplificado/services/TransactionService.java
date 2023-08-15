@@ -39,8 +39,8 @@ public class TransactionService {
 				.timestamp(LocalDateTime.now())
 				.build();
 
-		sender.setBalance(sender.getBalance().subtract(transactionDTO.value()));
-		receiver.setBalance(receiver.getBalance().add(transactionDTO.value()));
+		sender.substractBalance(transactionDTO.value());
+		receiver.addBalance(transactionDTO.value());
 
 		transactionRepository.save(newTransaction);
 		userService.saveUser(sender);

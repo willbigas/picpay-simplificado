@@ -34,4 +34,12 @@ public class User {
 
 	@Enumerated(EnumType.STRING)
 	private UserType userType;
+
+	public void substractBalance(BigDecimal value) {
+		this.getBalance().subtract(value);
+	}
+
+	public void addBalance(BigDecimal value) {
+		this.getBalance().add(value);
+	}
 }
