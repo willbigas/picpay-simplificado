@@ -4,7 +4,6 @@
 #### [Regras do Desafio](https://github.com/PicPay/picpay-desafio-backend)
 
 
-
 ## Instalação e Uso
 
 #### docker:
@@ -26,5 +25,4 @@
 #### Endpoint principal
 Collection do postman anexada (CRUD - PICPAY.postman_collection.json) no arquivos do projeto
 
-## Observações complementares (decisões de implementação)
 
